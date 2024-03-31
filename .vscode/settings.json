@@ -1,4 +1,12 @@
 {
-  "cSpell.words": ["Gamehub", "lucide", "nextjs", "svix", "trpc"],
+  "cSpell.words": [
+    "Gamehub",
+    "lucide",
+    "nextjs",
+    "svix",
+    "trpc",
+    "usehooks",
+    "zustand"
+  ],
   "window.zoomLevel": -0.1
 }
