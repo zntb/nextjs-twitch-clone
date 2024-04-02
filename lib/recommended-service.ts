@@ -7,7 +7,7 @@ export const getRecommended = async () => {
   try {
     const self = await getSelf();
     userId = self.id;
-  } catch (error) {
+  } catch {
     userId = null;
   }
 
@@ -42,15 +42,43 @@ export const getRecommended = async () => {
           },
         ],
       },
-      orderBy: {
-        createdAt: 'desc',
+      include: {
+        stream: {
+          select: {
+            isLive: true,
+          },
+        },
       },
+      orderBy: [
+        {
+          stream: {
+            isLive: 'desc',
+          },
+        },
+        {
+          createdAt: 'desc',
+        },
+      ],
     });
   } else {
     users = await db.user.findMany({
-      orderBy: {
-        createdAt: 'desc',
+      include: {
+        stream: {
+          select: {
+            isLive: true,
+          },
+        },
       },
+      orderBy: [
+        {
+          stream: {
+            isLive: 'desc',
+          },
+        },
+        {
+          createdAt: 'desc',
+        },
+      ],
     });
   }
 
