@@ -13,7 +13,9 @@
     "trpc",
     "unfollow",
     "unfollowed",
+    "uploadthing",
     "usehooks",
+    "utfs",
     "zustand"
   ],
   "window.zoomLevel": -0.1
