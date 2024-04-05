@@ -1,10 +1,10 @@
-"use server";
+'use server';
 
-import { Stream } from "@prisma/client";
-import { revalidatePath } from "next/cache";
+import { revalidatePath } from 'next/cache';
+import { Stream } from '@prisma/client';
 
-import { db } from "@/lib/db";
-import { getSelf } from "@/lib/auth-service";
+import { db } from '@/lib/db';
+import { getSelf } from '@/lib/auth-service';
 
 export const updateStream = async (values: Partial<Stream>) => {
   try {
@@ -16,7 +16,7 @@ export const updateStream = async (values: Partial<Stream>) => {
     });
 
     if (!selfStream) {
-      throw new Error("Stream not found");
+      throw new Error('Stream not found');
     }
 
     const validData = {
@@ -42,6 +42,6 @@ export const updateStream = async (values: Partial<Stream>) => {
 
     return stream;
   } catch {
-    throw new Error("Internal Error");
-  };
+    throw new Error('Internal Error');
+  }
 };

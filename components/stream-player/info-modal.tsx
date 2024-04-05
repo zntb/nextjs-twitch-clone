@@ -1,11 +1,10 @@
-"use client";
+'use client';
 
-import { toast } from "sonner";
-import { useState, useTransition, useRef, ElementRef } from "react";
-import { useRouter } from "next/navigation";
-import { Trash } from "lucide-react";
-import Image from "next/image";
-
+import { useState, useTransition, useRef, ElementRef } from 'react';
+import { useRouter } from 'next/navigation';
+import Image from 'next/image';
+import { toast } from 'sonner';
+import { Trash } from 'lucide-react';
 import {
   Dialog,
   DialogClose,
@@ -13,25 +12,26 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
-import { Hint } from "@/components/hint";
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { updateStream } from "@/actions/stream";
-import { UploadDropzone } from "@/lib/uploadthing";
+} from '@/components/ui/dialog';
+import { Label } from '@/components/ui/label';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+
+import { Hint } from '@/components/hint';
+import { updateStream } from '@/actions/stream';
+import { UploadDropzone } from '@/lib/uploadthing';
 
 interface InfoModalProps {
   initialName: string;
   initialThumbnailUrl: string | null;
-};
+}
 
 export const InfoModal = ({
   initialName,
-  initialThumbnailUrl
+  initialThumbnailUrl,
 }: InfoModalProps) => {
   const router = useRouter();
-  const closeRef = useRef<ElementRef<"button">>(null);
+  const closeRef = useRef<ElementRef<'button'>>(null);
   const [isPending, startTransition] = useTransition();
 
   const [name, setName] = useState(initialName);
@@ -41,13 +41,13 @@ export const InfoModal = ({
     startTransition(() => {
       updateStream({ thumbnailUrl: null })
         .then(() => {
-          toast.success("Thumbnail removed");
-          setThumbnailUrl("");
+          toast.success('Thumbnail removed');
+          setThumbnailUrl('');
           closeRef?.current?.click();
         })
-        .catch(() => toast.error("Something went wrong"));
+        .catch(() => toast.error('Something went wrong'));
     });
-  }
+  };
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -55,12 +55,12 @@ export const InfoModal = ({
     startTransition(() => {
       updateStream({ name: name })
         .then(() => {
-          toast.success("Stream updated");
+          toast.success('Stream updated');
           closeRef?.current?.click();
         })
-        .catch(() => toast.error("Something went wrong"))
+        .catch(() => toast.error('Something went wrong'));
     });
-  }
+  };
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
@@ -75,15 +75,11 @@ export const InfoModal = ({
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>
-            Edit stream info
-          </DialogTitle>
+          <DialogTitle>Edit stream info</DialogTitle>
         </DialogHeader>
         <form onSubmit={onSubmit} className="space-y-14">
           <div className="space-y-2">
-            <Label>
-              Name
-            </Label>
+            <Label>Name</Label>
             <Input
               disabled={isPending}
               placeholder="Stream name"
@@ -92,9 +88,7 @@ export const InfoModal = ({
             />
           </div>
           <div className="space-y-2">
-            <Label>
-              Thumbnail
-            </Label>
+            <Label>Thumbnail</Label>
             {thumbnailUrl ? (
               <div className="relative aspect-video rounded-xl overflow-hidden border border-white/10">
                 <div className="absolute top-2 right-2 z-[10]">
@@ -113,6 +107,7 @@ export const InfoModal = ({
                   alt="Thumbnail"
                   src={thumbnailUrl}
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover"
                 />
               </div>
@@ -122,11 +117,11 @@ export const InfoModal = ({
                   endpoint="thumbnailUploader"
                   appearance={{
                     label: {
-                      color: "#FFFFFF"
+                      color: '#FFFFFF',
                     },
                     allowedContent: {
-                      color: "#FFFFFF"
-                    }
+                      color: '#FFFFFF',
+                    },
                   }}
                   onClientUploadComplete={(res) => {
                     setThumbnailUrl(res?.[0]?.url);
@@ -143,11 +138,7 @@ export const InfoModal = ({
                 Cancel
               </Button>
             </DialogClose>
-            <Button
-              disabled={isPending}
-              variant="primary"
-              type="submit"
-            >
+            <Button disabled={isPending} variant="primary" type="submit">
               Save
             </Button>
           </div>

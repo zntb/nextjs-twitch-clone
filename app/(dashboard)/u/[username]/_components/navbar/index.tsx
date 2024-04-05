@@ -1,5 +1,5 @@
-import { Logo } from "./logo";
-import { Actions } from "./actions";
+import { Logo } from './logo';
+import { Actions } from './actions';
 
 export const Navbar = () => {
   return (

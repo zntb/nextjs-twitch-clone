@@ -1,10 +1,10 @@
-import Link from "next/link";
-import { User } from "@prisma/client";
-import { formatDistanceToNow } from "date-fns";
+import Link from 'next/link';
+import { formatDistanceToNow } from 'date-fns';
+import { User } from '@prisma/client';
+import { Skeleton } from '@/components/ui/skeleton';
 
-import { Thumbnail, ThumbnailSkeleton } from "@/components/thumbnail";
-import { Skeleton } from "@/components/ui/skeleton";
-import { VerifiedMark } from "@/components/verified-mark";
+import { Thumbnail, ThumbnailSkeleton } from '@/components/thumbnail';
+import { VerifiedMark } from '@/components/verified-mark';
 
 interface ResultCardProps {
   data: {
@@ -15,11 +15,9 @@ interface ResultCardProps {
     updatedAt: Date;
     user: User;
   };
-};
+}
 
-export const ResultCard = ({
-  data,
-}: ResultCardProps) => {
+export const ResultCard = ({ data }: ResultCardProps) => {
   return (
     <Link href={`/${data.user.username}`}>
       <div className="w-full flex gap-x-4">

@@ -1,6 +1,5 @@
 import { getFollowedUsers } from '@/lib/follow-service';
 import { getRecommended } from '@/lib/recommended-service';
-
 import { Wrapper } from './wrapper';
 import { Following, FollowingSkeleton } from './following';
 import { Toggle, ToggleSkeleton } from './toggle';

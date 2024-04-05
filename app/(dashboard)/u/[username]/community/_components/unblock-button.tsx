@@ -1,25 +1,25 @@
-"use client";
+'use client';
 
-import { toast } from "sonner";
-import { useTransition } from "react";
+import { useTransition } from 'react';
+import { toast } from 'sonner';
+import { Button } from '@/components/ui/button';
 
-import { onUnblock } from "@/actions/block";
-import { Button } from "@/components/ui/button";
+import { onUnblock } from '@/actions/block';
 
 interface UnblockButtonProps {
   userId: string;
-};
+}
 
-export const UnblockButton = ({
-  userId,
-}: UnblockButtonProps) => {
+export const UnblockButton = ({ userId }: UnblockButtonProps) => {
   const [isPending, startTransition] = useTransition();
 
   const onClick = () => {
     startTransition(() => {
       onUnblock(userId)
-        .then((result) => toast.success(`User ${result.blocked.username} unblocked`))
-        .catch(() => toast.error("Something went wrong"))
+        .then((result) =>
+          toast.success(`User ${result.blocked.username} unblocked`)
+        )
+        .catch(() => toast.error('Something went wrong'));
     });
   };
 
@@ -33,5 +33,5 @@ export const UnblockButton = ({
     >
       Unblock
     </Button>
-  )
-}
+  );
+};

@@ -2,10 +2,10 @@
 
 import Link from 'next/link';
 import { LucideIcon } from 'lucide-react';
-
-import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
+
+import { cn } from '@/lib/utils';
 import { useCreatorSidebar } from '@/store/use-creator-sidebar';
 
 interface NavItemProps {

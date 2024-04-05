@@ -1,9 +1,11 @@
 'use client';
-import { toast } from 'sonner';
-import { onFollow, onUnFollow } from '@/actions/follow';
-import { Button } from '@/components/ui/button';
+
 import { useTransition } from 'react';
-import { onBlock, onUnblock } from '@/actions/block';
+import { toast } from 'sonner';
+import { Button } from '@/components/ui/button';
+
+import { onFollow, onUnFollow } from '@/actions/follow';
+import { onUnblock } from '@/actions/block';
 
 interface ActionsProps {
   isFollowing: boolean;

@@ -1,27 +1,24 @@
-"use client";
+'use client';
 
-import { MessageSquare, Users } from "lucide-react";
+import { MessageSquare, Users } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
-import { Hint } from "@/components/hint";
-import { Button } from "@/components/ui/button";
-import { ChatVariant, useChatSidebar } from "@/store/use-chat-sidebar";
+import { Hint } from '@/components/hint';
+import { ChatVariant, useChatSidebar } from '@/store/use-chat-sidebar';
 
 export const VariantToggle = () => {
-  const {
-    variant,
-    onChangeVariant,
-  } = useChatSidebar((state) => state);
+  const { variant, onChangeVariant } = useChatSidebar((state) => state);
 
   const isChat = variant === ChatVariant.CHAT;
 
-  const Icon = isChat ? Users : MessageSquare
+  const Icon = isChat ? Users : MessageSquare;
 
   const onToggle = () => {
     const newVariant = isChat ? ChatVariant.COMMUNITY : ChatVariant.CHAT;
     onChangeVariant(newVariant);
   };
 
-  const label = isChat ? "Community" : "Go back to chat";
+  const label = isChat ? 'Community' : 'Go back to chat';
 
   return (
     <Hint label={label} side="left" asChild>

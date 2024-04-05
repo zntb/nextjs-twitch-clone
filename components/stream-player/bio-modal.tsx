@@ -1,8 +1,7 @@
 'use client';
 
-import { toast } from 'sonner';
 import { useState, useTransition, useRef, ElementRef } from 'react';
-
+import { toast } from 'sonner';
 import {
   Dialog,
   DialogClose,
@@ -11,9 +10,10 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
-import { updateUser } from '@/actions/user';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
+
+import { updateUser } from '@/actions/user';
 
 interface BioModalProps {
   initialValue: string | null;
