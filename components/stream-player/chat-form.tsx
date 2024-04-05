@@ -1,13 +1,12 @@
-"use client";
+'use client';
 
-import { useState } from "react";
+import { useState } from 'react';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+import { Skeleton } from '@/components/ui/skeleton';
 
-import { cn } from "@/lib/utils";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { Skeleton } from "@/components/ui/skeleton";
-
-import { ChatInfo } from "./chat-info";
+import { cn } from '@/lib/utils';
+import { ChatInfo } from './chat-info';
 
 interface ChatFormProps {
   onSubmit: () => void;
@@ -17,7 +16,7 @@ interface ChatFormProps {
   isFollowersOnly: boolean;
   isFollowing: boolean;
   isDelayed: boolean;
-};
+}
 
 export const ChatForm = ({
   onSubmit,
@@ -31,7 +30,8 @@ export const ChatForm = ({
   const [isDelayBlocked, setIsDelayBlocked] = useState(false);
 
   const isFollowersOnlyAndNotFollowing = isFollowersOnly && !isFollowing;
-  const isDisabled = isHidden || isDelayBlocked || isFollowersOnlyAndNotFollowing;
+  const isDisabled =
+    isHidden || isDelayBlocked || isFollowersOnlyAndNotFollowing;
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -48,40 +48,32 @@ export const ChatForm = ({
     } else {
       onSubmit();
     }
-  }
+  };
 
   if (isHidden) {
     return null;
   }
 
   return (
-    <form 
-      onSubmit={handleSubmit} 
+    <form
+      onSubmit={handleSubmit}
       className="flex flex-col items-center gap-y-4 p-3"
     >
       <div className="w-full">
-        <ChatInfo
-          isDelayed={isDelayed}
-          isFollowersOnly={isFollowersOnly}
-        />
+        <ChatInfo isDelayed={isDelayed} isFollowersOnly={isFollowersOnly} />
         <Input
           onChange={(e) => onChange(e.target.value)}
           value={value}
           disabled={isDisabled}
           placeholder="Send a message"
           className={cn(
-            "border-white/10",
-            (isFollowersOnly || isDelayed) && "rounded-t-none border-t-0"
+            'border-white/10',
+            (isFollowersOnly || isDelayed) && 'rounded-t-none border-t-0'
           )}
         />
       </div>
       <div className="ml-auto">
-        <Button
-          type="submit"
-          variant="primary"
-          size="sm"
-          disabled={isDisabled}
-        >
+        <Button type="submit" variant="primary" size="sm" disabled={isDisabled}>
           Chat
         </Button>
       </div>

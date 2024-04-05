@@ -1,14 +1,14 @@
 'use client';
 
-import { toast } from 'sonner';
-import { Heart } from 'lucide-react';
 import { useTransition } from 'react';
 import { useAuth } from '@clerk/nextjs';
 import { useRouter } from 'next/navigation';
-
-import { cn } from '@/lib/utils';
+import { toast } from 'sonner';
+import { Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
+
+import { cn } from '@/lib/utils';
 import { onFollow, onUnFollow } from '@/actions/follow';
 
 interface ActionsProps {

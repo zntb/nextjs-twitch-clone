@@ -1,17 +1,13 @@
-"use client";
+'use client';
 
-import { ArrowLeftFromLine, ArrowRightFromLine } from "lucide-react";
+import { ArrowLeftFromLine, ArrowRightFromLine } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
-import { Hint } from "@/components/hint";
-import { Button } from "@/components/ui/button";
-import { useChatSidebar } from "@/store/use-chat-sidebar";
+import { Hint } from '@/components/hint';
+import { useChatSidebar } from '@/store/use-chat-sidebar';
 
 export const ChatToggle = () => {
-  const {
-    collapsed,
-    onExpand,
-    onCollapse,
-  } = useChatSidebar((state) => state);
+  const { collapsed, onExpand, onCollapse } = useChatSidebar((state) => state);
 
   const Icon = collapsed ? ArrowLeftFromLine : ArrowRightFromLine;
 
@@ -23,7 +19,7 @@ export const ChatToggle = () => {
     }
   };
 
-  const label = collapsed ? "Expand" : "Collapse";
+  const label = collapsed ? 'Expand' : 'Collapse';
 
   return (
     <Hint label={label} side="left" asChild>
