@@ -32,7 +32,7 @@
     "jwt-decode": "^4.0.0",
     "livekit-client": "^1.15.13",
     "livekit-server-sdk": "^1.2.7",
-    "lucide-react": "^0.417.0",
+    "lucide-react": "^0.419.0",
     "next": "14.1.4",
     "next-themes": "^0.3.0",
     "query-string": "^9.0.0",
