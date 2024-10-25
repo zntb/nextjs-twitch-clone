@@ -14,7 +14,7 @@
     "@clerk/themes": "^2.1.28",
     "@livekit/components-react": "^2.5.4",
     "@prisma/client": "^5.20.0",
-    "@radix-ui/react-avatar": "^1.1.0",
+    "@radix-ui/react-avatar": "^1.1.1",
     "@radix-ui/react-dialog": "^1.1.1",
     "@radix-ui/react-label": "^2.1.0",
     "@radix-ui/react-scroll-area": "^1.1.0",
