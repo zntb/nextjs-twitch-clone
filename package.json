@@ -13,7 +13,7 @@
     "@clerk/nextjs": "^5.7.5",
     "@clerk/themes": "^2.1.28",
     "@livekit/components-react": "^2.6.7",
-    "@prisma/client": "^5.21.1",
+    "@prisma/client": "^5.22.0",
     "@radix-ui/react-avatar": "^1.1.1",
     "@radix-ui/react-dialog": "^1.1.2",
     "@radix-ui/react-label": "^2.1.0",
