@@ -41,7 +41,7 @@
     "sonner": "^1.7.0",
     "string-to-color": "^2.2.2",
     "svix": "^1.44.0",
-    "tailwind-merge": "^2.5.5",
+    "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7",
     "uploadthing": "^6.13.2",
     "usehooks-ts": "^3.1.0",
