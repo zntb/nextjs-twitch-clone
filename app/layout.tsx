@@ -21,15 +21,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider appearance={{ baseTheme: dark }}>
-      <html lang="en" suppressHydrationWarning>
+    <ClerkProvider appearance={{ baseTheme: dark }} afterSignOutUrl={'/'}>
+      <html lang='en' suppressHydrationWarning>
         <body className={inter.className}>
           <ThemeProvider
-            attribute="class"
-            forcedTheme="dark"
-            storageKey="gamehub-theme"
+            attribute='class'
+            forcedTheme='dark'
+            storageKey='gamehub-theme'
           >
-            <Toaster theme="light" position="bottom-center" />
+            <Toaster theme='light' position='bottom-center' />
             {children}
           </ThemeProvider>
         </body>
