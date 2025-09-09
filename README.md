@@ -172,7 +172,7 @@ Contributions and issues are welcome!
 
 ## License
 
-No explicit license file detected in this repo at the time of writing. Consider adding a `LICENSE` (MIT/Apache‑2.0 are common). If a license is later added, it supersedes this note.
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
 
 ---
 
