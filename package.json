@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^6.33.7",
-    "@clerk/themes": "^2.4.19",
+    "@clerk/themes": "^2.4.29",
     "@livekit/components-react": "^2.9.15",
     "@prisma/client": "^5.22.0",
     "@radix-ui/react-avatar": "^1.1.10",
