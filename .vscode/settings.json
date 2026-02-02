@@ -19,5 +19,6 @@
     "utfs",
     "zustand"
   ],
-  "window.zoomLevel": -0.1
+  "window.zoomLevel": -0.1,
+  "prisma.pinToPrisma6": true
 }
